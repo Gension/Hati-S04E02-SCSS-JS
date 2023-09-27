@@ -1,0 +1,13 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: bisque;
+}
+.item {
+    height: 100px;
+    width: 100px;
+    background-color: #F0F;
+}
+
+.item-modified {
+    background-color: blue;
+}

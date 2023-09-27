@@ -1,0 +1,49 @@
+@import 'base/reset.scss';
+@import 'base/var.scss';
+
+$container-width: 900px;
+$sidebar-width: 200px;
+
+body {
+    background-color: $background-color;
+    color: $base-text-color;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    width: $container-width;
+    display: flex;
+    background-color: red;
+    height: 300px;
+}
+
+.sidebar {
+    width: $sidebar-width;
+    background-color: blue;
+}
+
+.content {
+    background-color: aquamarine;
+    width: $container-width - $sidebar-width;
+}
+.item-holder {
+    display: flex;
+}
+
+/* Génération de classes dynamic */
+// for(let i = 0; i < 30; i++)
+@for $i from 0 through 30 {
+    $base-color: #FFCCCB;
+    $amount: $i * 3;
+    $bg: darken($base-color, $amount );
+
+    @if($i <= 2) {
+        $bg: rgb(0, 10 * $i, 0);
+    } 
+    
+    .item-#{$i} {
+        height: 10px * $i;
+        width: 10px;
+        background-color: $bg;
+    }
+}
